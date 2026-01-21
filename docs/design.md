@@ -14,37 +14,42 @@ Interface: Files in folders
 ## Bronze Layer
 
 Object Type: Tables  
-Load:   
+Load:
 - Batch Processing  
 - Full Load  
 - Truncate & Insert  
+
 Transformations: None  
-Date Model: None
+Data Model: None
 
 ## Silver Layer
 
 Object Type: Tables  
-Load:  
+Load:
 - Batch Processing  
 - Full Load  
 - Truncate & Insert  
-Transformations:   
+
+Transformations:
 - Data Cleansing  
 - Data Standardization  
 - Data Normalization  
 - Derived Columns  
 - Data Enrichment  
+
 Data Model: None
 
 ## Gold Layer
 
 Object Type: Views  
 Load: None  
-Transformations:  
+
+Transformations:
 - Data Integrations  
 - Data Aggregation  
-- Business Logic
-Data Model:  
+- Business Logic  
+
+Data Model:
 - Star Schema  
 - Flat Table  
 - Aggregated Table
