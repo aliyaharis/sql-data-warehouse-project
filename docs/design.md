@@ -43,8 +43,8 @@ Load: None
 Transformations:  
 - Data Integrations  
 - Data Aggregation  
-- Business Logic  
-Date Model:  
+- Business Logic
+Data Model:  
 - Star Schema  
 - Flat Table  
 - Aggregated Table
