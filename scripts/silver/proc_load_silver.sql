@@ -50,16 +50,18 @@ BEGIN
 			cst_key,
 			TRIM(cst_firstname) AS cst_firstname,
 			TRIM(cst_lastname) AS cst_lastname,
+			-- Normalize marital status values to readable format
 			CASE 
 				WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
 				WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
 				ELSE 'n/a'
-			END AS cst_marital_status, -- Normalize marital status values to readable format
+			END AS cst_marital_status,
+			-- Normalize gender values to readable format
 			CASE 
 				WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
 				WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
 				ELSE 'n/a'
-			END AS cst_gndr, -- Normalize gender values to readable format
+			END AS cst_gndr,
 			cst_create_date
 		FROM (
 			SELECT
@@ -246,8 +248,6 @@ BEGIN
 		PRINT '=========================================='
 		PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
 		PRINT 'Error Message' + ERROR_MESSAGE();
-		PRINT 'Error Message' + CAST (ERROR_NUMBER() AS NVARCHAR);
-		PRINT 'Error Message' + CAST (ERROR_STATE() AS NVARCHAR);
 		PRINT '=========================================='
 	END CATCH
 END
