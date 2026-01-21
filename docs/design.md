@@ -6,12 +6,12 @@ Bronze: Raw, unprocessed data
 Silver: Cleaned and standardised data
 Gold: Aggregated, business-ready data
 
-##Source
+## Source
 
 Object Type: CSV files
 Interface: Files in folders
 
-##Bronze Layer
+## Bronze Layer
 
 Object Type: Tables
 Load: 
@@ -22,7 +22,7 @@ Load:
 Transformations: None
 Date Model: None
 
-##Silver Layer
+## Silver Layer
 
 Object Type: Tables
 Load:
@@ -37,7 +37,7 @@ Transformations:
     - Data Enrichment
 Data Model: None
 
-##Gold Layer
+## Gold Layer
 
 Object Type: Views
 Load: None
@@ -51,4 +51,4 @@ Date Model:
     - Aggregated Table
 
 
-##Naming Convention: Snake Case
+## Naming Convention: Snake Case
