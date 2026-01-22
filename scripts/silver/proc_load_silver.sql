@@ -92,8 +92,10 @@ BEGIN
 		)
 		SELECT
 			prd_id,
-			REPLACE(SUBSTRING(prd_key, 1, 5), '-', '_') AS cat_id, -- Extract category ID
-			SUBSTRING(prd_key, 7, LEN(prd_key)) AS prd_key,        -- Extract product key
+			-- Extract category ID
+			REPLACE(SUBSTRING(prd_key, 1, 5), '-', '_') AS cat_id, 
+			-- Extract product key
+			SUBSTRING(prd_key, 7, LEN(prd_key)) AS prd_key,     
 			prd_nm,
 			ISNULL(prd_cost, 0) AS prd_cost,
 			CASE 
@@ -153,7 +155,7 @@ BEGIN
 			sls_quantity,
 			CASE 
 				WHEN sls_price IS NULL OR sls_price <= 0 
-					THEN sls_sales / NULLIF(sls_quantity, 0)
+					THEN sls_sales / NULLIF(sls_quantity, 0) --prevents divide-by-zero
 				ELSE sls_price  -- Derive price if original value is invalid
 			END AS sls_price
 		FROM bronze.crm_sales_details;
